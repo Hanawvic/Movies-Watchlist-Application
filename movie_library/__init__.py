@@ -1,6 +1,6 @@
 
 from flask import Flask
-from dotenv import load_dotenv
+from flask.cli import load_dotenv
 from pymongo import MongoClient
 from flask_bootstrap import Bootstrap5
 from flask_mail import Mail
