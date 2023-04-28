@@ -1,12 +1,10 @@
 from flask import Flask
 from pymongo import MongoClient
 from flask_bootstrap import Bootstrap5
-from flask.cli import load_dotenv
 from flask_mail import Mail
 from movie_library.config import Config
 
 
-load_dotenv()
 bootstrap = Bootstrap5()
 mail = Mail()
 client = MongoClient(Config.MONGODB_URI)
