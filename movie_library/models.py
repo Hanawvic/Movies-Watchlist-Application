@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 from datetime import datetime
-
+from typing import List
 current_day = datetime.today()
 current_year = datetime.today().year
 
@@ -11,11 +11,11 @@ class Movie:
     title: str
     director: str
     year: int
-    cast: list[str] = field(default_factory=list)
-    series: list[str] = field(default_factory=list)
+    cast: List[str] = field(default_factory=list)
+    series: List[str] = field(default_factory=list)
     last_watched: datetime = None
     rating: int = 0
-    tags: list[str] = field(default_factory=list)
+    tags: List[str] = field(default_factory=list)
     description: str = None
     video_link: str = None
 
@@ -37,7 +37,7 @@ class User:
     email: str
     password: str
     confirmed: bool = False
-    movies: list[str] = field(default_factory=list)
+    movies: List[str] = field(default_factory=list)
 
     @property
     def id(self):
