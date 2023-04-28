@@ -21,7 +21,7 @@ def login_required(route):
     @functools.wraps(route)
     def route_wrapper(*args, **kwargs):
         if not session.get("email"):
-            return redirect(url_for("login"))
+            return redirect(url_for(".login"))
         return route(*args, **kwargs)
 
     return route_wrapper
