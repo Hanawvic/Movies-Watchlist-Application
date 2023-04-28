@@ -1,12 +1,10 @@
 import functools
 import uuid
 from dataclasses import asdict
-
 from flask import Blueprint, render_template, session, redirect, url_for, request, flash, current_app, abort
 from flask_mail import Message
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired, BadSignature
 from werkzeug.security import check_password_hash, generate_password_hash
-
 from movie_library import mail, Config
 from movie_library.forms import MovieForm, ExtendedMovieForm, RegisterForm, LoginForm
 from movie_library.models import Movie, current_day, current_year, User
@@ -224,20 +222,6 @@ def rate_movie(_id: str):
 def watch_today(_id: str):
     current_app.db.movie.update_one({"_id": _id}, {"$set": {"last_watched": current_day}})
     return redirect(url_for(".movie", _id=_id))
-
-
-# @pages.route('/validate', methods=['POST'])
-# def validate_add_movie():
-# """Async with jquery ajax"""
-
-#     form = MovieForm(request.form)
-#     if form.validate_on_submit():
-#         # Add the movie to the database or do some other processing here
-#         return jsonify({'success': 'Movie added successfully.'})
-#     else:
-#         # Return error messages as JSON
-#         error_messages = ', '.join([str(error) for error in form.errors.values()])
-#         return jsonify({'error': error_messages})
 
 
 @pages.get("/toggle-theme")

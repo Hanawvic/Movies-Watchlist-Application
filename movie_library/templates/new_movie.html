@@ -15,16 +15,6 @@
     <div class="form__container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <!-- Place to show alerts    <div id="successAlert" class="alert alert-success alert-dismissible fade show d-none success-message" role="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <span id="successMessage"></span>
-                </div>
-
-                <div id="errorAlert" class="alert alert-danger alert-dismissible fade show d-none error-message" role="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <span id="errorMessage"></span>
-                </div>-->
-
 
 
                 {{ form.hidden_tag() }}
@@ -32,17 +22,6 @@
                 {{ render_text_field(form.director) }}
                 {{ render_text_field(form.year) }}
 
-              <!--    <div class="form__group">
-                {{ form.hidden_tag() }}
-                {{ form.title.label(class_="form__label") }} {{ form.title(class_="form__field") }}
-                {{ form.director.label(class_="form__label") }} {{ form.director(class_="form__field") }}
-                {{ form.year.label(class_="form__label") }} {{ form.year(class_="form__field") }}
-
-                  this is optional errors since we have defined errors in jsonify if u want to use jquery
-                {%- for error in form.errors %}
-                    <span class="form__error">{{ error }}</span>
-                    {% endfor %}
-                </div>-->
                 <div>
                     {{ form.submit(class_="button button--form", id="add-movie-button") }}
                 </div>
